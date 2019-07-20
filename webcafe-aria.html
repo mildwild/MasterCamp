@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+  <meta charset="UTF-8">
+  <!-- 타이틀 밑에 캐릭터셋이 있으면 안됨. 타이틀텍스트 깨질 수 있음. 헤드 등장하자마자 인코딩값 나와야함 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 반응형을 위한 요소 -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- x는 비표준을 뜻함. ie=edge는 현재깔린 익스플로러의 최신버전으로 하라는 말. 특정버전을 강요해야할 때 edge대신 버전을 명시 -->
+  <title>웹카페</title>
+  <!-- 타이틀은 해당페이지의 핵심키워드로 적용해야 함-->
+  <link rel="stylesheet" href="css/webcafe.css">
+</head>
+<body>
+  <!-- aria코드로 div에 역할부여해보기 -->
+  <!-- 비중립적인 것에 역할모델을 주면 안됨. 예를 들어 h1,, div에 role로 button을 주면 키보드 포커싱이 안됨. 치명적 tabindex값을 추가적으로 줘야함-->
+  <div class="wrapper">
+    <div class="header" role="banner">
+      <!-- #을 넣으면 가상링크. empty element <img> but, XHTML에서는 <img />로 사용.좀 더 엄격한 것 -->
+      <!-- 이미지 src에 폴더경로를 넣으면 상대경로로 처리됨 -->
+      <!-- alt =alternative 이미지 대신 들어갈 대체정보. 스크린 리더에서 어떻게 읽힐지 고려하면서 띄어쓰기 해줘야함. -->
+      <h1 class="logo"><a href="#"><img src="images/rwd-logo.png" alt="Web Cafe"></a></h1>
+      <!-- ul.member>li*3>a[href="#"] -->
+      <h1>heading</h1>
+      <ul class="member">
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">커뮤니티</a></li>
+      </ul>  
+      <form action="https://formspree.io/35mmg@naver.com" method="POST" class="search-form">
+        <fieldset>
+          <legend>검색 폼</legend>
+          <label for="search">검색어</label>
+          <input type="search" id="search" name="keyword" required placeholder="검색어를 입력하세요">
+          <!-- required는 입력어가 없을 경우에 서버전송을 하지않고 팝업을 띄어줌 -->
+          <button class="btn-search" type="submit">검색</button>
+        </fieldset>
+      </form>
+    </div>
+    <!-- 여기서 배너는 머릿말이라는 의미정도 -->
+    <div class="nav" role="navigation">네비게이션</div>
+    <div class="main" role="main">메인</div>
+    <div class="slogan" role="article">슬로건</div>
+    <div class="footer-bg">
+      <div class="footer" role="contentinfo">푸터</div>
+    </div>
+  </div>
+</body>
+</html>

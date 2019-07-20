@@ -1,0 +1,33 @@
+@charset "utf-8";
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+/* @ = at sign rule = css에서 무언가를 선언하는 것 */
+@import url(./normalize.css);
+@import url(./reset.css);
+/* 경로 .은 현재경로를 말함 */
+
+/* 기본스타일 - 글꼴(웹폰트),링크,색상(전경,배경) */
+html{
+  font-size: 10px;
+  /* fnz */
+}
+body{
+  font-family: 'Spoqa Han Sans','sans-serif';
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #181818;
+  background: #fff;
+}
+a{
+  color: inherit;
+  /* inherit:상위속성을 상속받게 함 */
+  text-decoration: none;
+}
+/* a:link{
+  color: green;
+}
+a:visited{
+  color: grey;
+}
+a:hover, a:focus{
+  color: red;
+} */
