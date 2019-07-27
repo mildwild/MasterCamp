@@ -4,6 +4,7 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 /* 경로 .은 현재경로를 말함 */
+/* 실무에서는 reset.css잘 안씀. normalize를 배경으로 사용할 것. 이유는 캐스캐이딩. 코드땜에 무거워짐 */
 
 /* 기본스타일 - 글꼴(웹폰트),링크,색상(전경,배경) */
 html{
@@ -31,3 +32,33 @@ a:visited{
 a:hover, a:focus{
   color: red;
 } */
+
+
+/* 공통 스타일 */
+
+
+/* 모바일 스타일 */
+@media screen and (min-width: 320px) and (max-width: 990px){
+  /* 모바일 헤더 */
+  .header{
+    background-color: #38302E;
+    color: #fff;
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap; 
+    /* 줄바꿈 허용 */
+  }
+  .logo, .member, .search-form{
+    width: 100%;
+  }
+  /* 모바일 멤버링크 */
+  .member{
+    background: #988574;
+    order: -1;
+  }
+}
+
+/* 데스크탑 스타일 */
+@media screen and (min-width: 1000px){
+  
+}
