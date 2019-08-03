@@ -187,9 +187,84 @@ legend, .a11y-hidden{
     cursor: pointer;
     /* 버튼, 링크에는 손가락모양 보이게 */
   }
+  .member .bar{
+    display: none;
+    /* 화면에서도 안보이고, 스크린리더도 읽지않고, 영역도 차지하지않음 */
+  }
 }
 
 /* 데스크탑 스타일 */
 @media screen and (min-width: 1000px){
-  
+  /* 데스크탑 헤더 */
+  .header{
+    width: 1000px;
+    margin: 0 auto;
+    /* background-color: yellow; */
+    position: relative;
+  }
+  /* 데스크탑 로고 */
+  .logo{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -29px;
+    /* transform: translateY(-50%); */
+  }
+  /* 데스크탑 멤버링크 */
+  .member{
+    /* background-color: pink; */
+    text-align: right;
+    padding: 2px 0;
+    /* 멤버에도 패딩주는 이유는 키보드 포커스 안짤리게 하기 위해서 */
+    position: relative;
+    left: 10px;
+  }
+  .member li, .member a{
+    /* background-color: orange; */
+    display: inline-block;
+  }
+  /* .member li:nth-child(n+2)::before{
+    content: "|";
+  } */
+  /* 가상선택자도 스크린리더가 읽음.. */
+
+  .member a{
+    /* background-color: orange; */
+    padding: 0.5em 10px;
+    /* inline인경우 상자의 경우보다 글자크기에 맞춰서 크기가 맞춰짐 */
+    /* 접근성가이드 때문. 링크영역을 클릭용이하게 넓게 만들어줄 것! 44px규칙 */
+
+    /* outline: 0; */
+    /* 키보드 포커싱 싫을경우 아웃라인 0 넣으면됨. 하지만 사용성에 좋지않으므로 비추. */
+    /* a:focus에 컬러변화를 두는 등 추가적 장치가 필요함 */
+    margin-left: 3px;
+  }
+  /* 데스크탑 검색폼 */
+  .search-form{
+    /* background-color:lime; */
+    text-align: right;
+    margin: 1em 0;
+  }
+  .search-form input[type="search"]{
+    /* background-color: skyblue; */
+    width: 400px;
+    height: 35px;
+    border: 1px solid #999;
+    padding: 1px 1px 1px 5px;
+    border-radius: 5px;
+    margin-right: 0.5em;
+  }
+  .btn-search{
+    height: 35px;
+    border: 1px solid #999;
+    padding: 1px 1em;
+    background-color: #988574;
+    color: #fff;
+    border-radius: 5px;
+    /* transition: border-radius 600ms;  */
+    /* 600ms 밀리세컨 */
+  }
+  /* .btn-search:hover, .btn-search:focus{
+    border-radius: 0px 5px 0px 5px;
+  } */
 }
