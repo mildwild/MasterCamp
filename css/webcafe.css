@@ -195,11 +195,15 @@ legend, .a11y-hidden{
 
 /* 데스크탑 스타일 */
 @media screen and (min-width: 1000px){
+  /* 데스크탑 레이아웃 */
+  .header, .menu{
+    width: 1000px;
+    /* margin: 0 auto; */
+    margin-left: auto;
+    margin-right: auto;
+  }
   /* 데스크탑 헤더 */
   .header{
-    width: 1000px;
-    margin: 0 auto;
-    /* background-color: yellow; */
     position: relative;
   }
   /* 데스크탑 로고 */
@@ -267,4 +271,46 @@ legend, .a11y-hidden{
   /* .btn-search:hover, .btn-search:focus{
     border-radius: 0px 5px 0px 5px;
   } */
+  /* 데스크탑 네비게이션 */
+  .navigation{
+    background-color: #988574;
+    /* box-shadow: 0 -2px 5px 0 #000, 0 2px 5px 0 #000; */
+    /* offset x, y, blur, spray radius, color 5가지 순서 */
+    /* shadow의 경우 border와 달리 전체 크기에 반영되지 않음 */
+    border-top: 2px solid #181818;
+    border-bottom: 2px solid #181818;
+  }
+  .menu{
+    /* background-color: yellow; */
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+    /* overflow: hidden; */
+    /* float로 인해 잃은 높이값을 다시 읽어주는 역할.  */
+    color: #fff;
+  }
+  .clearfix::after{
+    content:"";
+    background-color: orange;
+    display: block;
+    clear:both;
+    /* 클리어는 무조건 블록상태여야함 */
+  }
+  .menu-list{
+    float: left;
+    /* width: 200px; */
+  }
+  .menu-list:nth-child(n+2){
+    margin-left: 100px;
+  }
+  .menu-item{
+    font-size: 1.8rem;
+    text-shadow: 0 1px 0 #000, 1px 0 0 #000, 0 -1px 0 #000, -1px 0 0 #000;
+  }
+  .sub-menu{
+    margin: 1em;
+  }
+  .sub-menu li{
+    margin-bottom: 1em;
+  }
+
 }
