@@ -5,6 +5,7 @@
 @import url(./reset.css);
 /* 경로 .은 현재경로를 말함 */
 /* 실무에서는 reset.css잘 안씀. normalize를 배경으로 사용할 것. 이유는 캐스캐이딩. 코드땜에 무거워짐 */
+@import url('./fonts.css');
 
 /* 기본스타일 - 글꼴(웹폰트),링크,색상(전경,배경) */
 *, *::before, *::after{
@@ -191,6 +192,100 @@ legend, .a11y-hidden{
     display: none;
     /* 화면에서도 안보이고, 스크린리더도 읽지않고, 영역도 차지하지않음 */
   }
+  /* 모바일 내비게이션 */
+  .navigation{
+    background-color: blue;
+  }
+  /* 모바일 메뉴 제어 버튼 */
+  .btn-menubar{
+    background-color: transparent;
+    /* 버튼은 기본적으로 배경색을 지니고 있기때문에 투명으로 적용해줘야함 */
+    width: 30px;
+    height: 30px;
+    border: 0;
+    padding: 0;
+    position: absolute;
+    top: 7rem;
+    right: 20px;
+  }
+  .is-act .btn-menubar{
+    overflow: hidden;
+  }
+  .menubar{
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 26%;
+    left: 0;
+    transition: all 0.4s;
+
+    /* 일반적 애니메이션 속도 보통0.4s  빠름0.2s  느림0.6s */
+
+    /* transition-property: transform, background, top;
+    transition-duration: 500ms, 1000ms, 500ms;
+    transition-delay: 0s, 500ms, 1000ms;
+    transition-timing-function: ease-in-out; */
+  }
+  .is-act .menubar{
+    /* background-color: red; */
+  }
+  .menubar-top{
+    top:0;
+  }
+  .is-act .menubar-top{
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .menubar-middle{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .is-act .menubar-middle{
+    transform: translate(-100%,-50%);
+  }
+  .menubar-bottom{
+    top: 100%;
+    transform: translateY(-100%);
+  }
+  .is-act .menubar-bottom{
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  /* 모바일 메인 메뉴 */
+  .menu{
+    background-color: rgba(0,0,0,0.85);
+    color: #fff;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 70vw;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: all 0.2s;
+    /* 열고 닫히는 것 모두에 트랜지션 적용되야하므로 .menu에 지정해야함 */
+    padding: 1.5em;
+  }
+  .is-act .menu{
+    transform: translateX(0);
+  }
+  .menu-item{
+    /* background-color: blue; */
+    margin: 1em 0;
+    display: block;
+    cursor: pointer;
+  }
+  .sub-menu{
+    /* background-color: orange; */
+    display: none;
+    margin-left: 2em;
+    list-style: circle;
+  }
+  .sub-menu li{
+    margin-bottom: 0.5em;
+  }
+  .menu-act .sub-menu{
+    display: block;
+  }
 }
 
 /* 데스크탑 스타일 */
@@ -280,6 +375,10 @@ legend, .a11y-hidden{
     border-top: 2px solid #181818;
     border-bottom: 2px solid #181818;
   }
+  .btn-menubar{
+    display: none;
+
+  }
   .menu{
     /* background-color: yellow; */
     margin-top: 20px;
@@ -304,6 +403,7 @@ legend, .a11y-hidden{
   }
   .menu-item{
     font-size: 1.8rem;
+    font-weight: 700;
     text-shadow: 0 1px 0 #000, 1px 0 0 #000, 0 -1px 0 #000, -1px 0 0 #000;
   }
   .sub-menu{
